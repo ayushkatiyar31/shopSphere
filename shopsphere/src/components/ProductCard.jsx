@@ -66,7 +66,6 @@ function ProductCard({ product }) {
             src={product.image}
             alt={product.title}
             className="w-full h-full object-contain group-hover:scale-[1.03] transition-transform duration-500 drop-shadow-md mix-blend-multiply dark:mix-blend-normal"
-            loading="lazy"
           />
           
           {/* Quick Add Overlay */}

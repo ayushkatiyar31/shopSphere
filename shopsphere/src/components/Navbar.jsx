@@ -6,7 +6,8 @@ import { ShoppingBag, Heart, Search, User, X } from "lucide-react"
 import ThemeToggle from "./ThemeToggle"
 import products from "../data/products"
 
-function Navbar({ searchQuery, setSearchQuery }) {
+function Navbar() {
+  const [searchQuery, setSearchQuery] = useState("")
   const { totalItems } = useContext(CartContext)
   const { wishlistItems } = useContext(WishlistContext)
   const navigate = useNavigate()
@@ -62,10 +63,8 @@ function Navbar({ searchQuery, setSearchQuery }) {
                 placeholder="Search premium products..."
                 value={searchQuery || ""}
                 onChange={(e) => {
-                  if (setSearchQuery) {
-                    setSearchQuery(e.target.value)
-                    setShowSuggestions(true)
-                  }
+                  setSearchQuery(e.target.value)
+                  setShowSuggestions(true)
                 }}
                 onFocus={() => setShowSuggestions(true)}
                 className="block w-full pl-10 pr-10 py-2 bg-gray-50 dark:bg-dark-surface/50 border border-gray-200 dark:border-gray-700/50 rounded-full text-sm placeholder-gray-400 dark:placeholder-gray-500 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:bg-white dark:focus:bg-dark-surface transition-all shadow-inner"
@@ -73,7 +72,7 @@ function Navbar({ searchQuery, setSearchQuery }) {
               {searchQuery && (
                 <button 
                   onClick={() => {
-                    if (setSearchQuery) setSearchQuery("")
+                    setSearchQuery("")
                     setShowSuggestions(false)
                   }}
                   className="absolute inset-y-0 right-0 pr-3 flex items-center text-gray-400 hover:text-gray-600 dark:hover:text-gray-300 transition-colors"

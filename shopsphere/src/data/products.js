@@ -1,60 +1,52 @@
 const products = [
-{
-  id: 1,
-  title: "Wireless Headphones",
-  price: 2999,
-  category: "Electronics",
-  image: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=800&q=80"
-},
-  {
-    id: 2,
-    title: "Smart Watch",
-    price: 4999,
-    category: "Electronics",
-    image: "https://images.unsplash.com/photo-1516574187841-cb9cc2ca948b?w=800&q=80"
-  },
-  {
-    id: 3,
-    title: "Running Shoes",
-    price: 2599,
-    category: "Fashion",
-    image: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=800&q=80"
-  },
-  {
-    id: 4,
-    title: "Backpack",
-    price: 1499,
-    category: "Accessories",
-    image: "https://images.unsplash.com/photo-1581605405669-fcdf81165afa?w=800&q=80"
-  },
-  {
-    id: 5,
-    title: "Bluetooth Speaker",
-    price: 1999,
-    category: "Electronics",
-    image: "https://images.unsplash.com/photo-1519677100203-a0e668c92439?w=800&q=80"
-  },
-  {
-    id: 6,
-    title: "Leather Jacket",
-    price: 5999,
-    category: "Fashion",
-    image: "https://images.unsplash.com/photo-1495105787522-5334e3ffa0ef?w=800&q=80"
-  },
-  {
-    id: 7,
-    title: "Gaming Mouse",
-    price: 1299,
-    category: "Electronics",
-    image: "https://images.unsplash.com/photo-1587829741301-dc798b83add3?w=800&q=80"
-  },
-  {
-    id: 8,
-    title: "Travel Bag",
-    price: 3499,
-    category: "Accessories",
-    image: "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=800&q=80"
-  }
-]
+  { id: 1, title: "Wireless Noise-Cancelling Headphones", price: 12900, category: "Electronics", image: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=800&q=80", rating: 4.8 },
+  { id: 2, title: "Minimalist Smart Watch", price: 8999, category: "Electronics", image: "https://images.unsplash.com/photo-1516574187841-cb9cc2ca948b?w=800&q=80", rating: 4.6 },
+  { id: 3, title: "Performance Running Shoes", price: 5499, category: "Fashion", image: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=800&q=80", rating: 4.5 },
+  { id: 4, title: "Urban Explorer Backpack", price: 3499, category: "Accessories", image: "https://images.unsplash.com/photo-1581605405669-fcdf81165afa?w=800&q=80", rating: 4.7 },
+  { id: 5, title: "Portable Bluetooth Speaker", price: 4599, category: "Electronics", image: "https://images.unsplash.com/photo-1519677100203-a0e668c92439?w=800&q=80", rating: 4.4 },
+  { id: 6, title: "Classic Leather Jacket", price: 15999, category: "Fashion", image: "https://images.unsplash.com/photo-1495105787522-5334e3ffa0ef?w=800&q=80", rating: 4.9 },
+  { id: 7, title: "Ergonomic Gaming Mouse", price: 2999, category: "Electronics", image: "https://images.unsplash.com/photo-1587829741301-dc798b83add3?w=800&q=80", rating: 4.6 },
+  { id: 8, title: "Premium Travel Duffle", price: 6499, category: "Accessories", image: "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=800&q=80", rating: 4.8 },
+  { id: 9, title: "4K Action Camera", price: 18499, category: "Gadgets", image: "https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?w=800&q=80", rating: 4.7 },
+  { id: 10, title: "Ceramic Coffee Mug Set", price: 1299, category: "Home", image: "https://images.unsplash.com/photo-1514228742587-6b1558fcca3d?w=800&q=80", rating: 4.5 },
+  { id: 11, title: "Mechanical Keyboard", price: 7999, category: "Electronics", image: "https://images.unsplash.com/photo-1595225476474-87563907a212?w=800&q=80", rating: 4.9 },
+  { id: 12, title: "Designer Sunglasses", price: 4999, category: "Accessories", image: "https://images.unsplash.com/photo-1511499767150-a48a237f0083?w=800&q=80", rating: 4.6 },
+  { id: 13, title: "Smart Home Hub", price: 14999, category: "Gadgets", image: "https://images.unsplash.com/photo-1558089687-f282ffcbc126?w=800&q=80", rating: 4.4 },
+  { id: 14, title: "Cotton Blend Hoodie", price: 2499, category: "Fashion", image: "https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=800&q=80", rating: 4.5 },
+  { id: 15, title: "Luxury Scented Candle", price: 899, category: "Home", image: "https://images.unsplash.com/photo-1602928321679-560bb453f190?w=800&q=80", rating: 4.8 },
+  { id: 16, title: "Noise-Isolating Earbuds", price: 8499, category: "Electronics", image: "https://images.unsplash.com/photo-1590658268037-6bf12165a8df?w=800&q=80", rating: 4.7 },
+  { id: 17, title: "Stainless Steel Water Bottle", price: 1499, category: "Accessories", image: "https://images.unsplash.com/photo-1602143407151-7111542de6e8?w=800&q=80", rating: 4.6 },
+  { id: 18, title: "Drone with 4K Camera", price: 45000, category: "Gadgets", image: "https://images.unsplash.com/photo-1507582020474-9a35b7d455d9?w=800&q=80", rating: 4.9 },
+  { id: 19, title: "Throw Blanket", price: 2999, category: "Home", image: "https://images.unsplash.com/photo-1580828369019-144f8ee75f49?w=800&q=80", rating: 4.7 },
+  { id: 20, title: "Denim Jacket", price: 3999, category: "Fashion", image: "https://images.unsplash.com/photo-1576871337622-98d48d1cf531?w=800&q=80", rating: 4.5 },
+  { id: 21, title: "Ultra-Wide Monitor", price: 34999, category: "Electronics", image: "https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?w=800&q=80", rating: 4.8 },
+  { id: 22, title: "Leather Wallet", price: 1999, category: "Accessories", image: "https://images.unsplash.com/photo-1627123424574-724758594e93?w=800&q=80", rating: 4.6 },
+  { id: 23, title: "Fitness Tracker", price: 3499, category: "Gadgets", image: "https://images.unsplash.com/photo-1575311373937-040b8e1fd5b0?w=800&q=80", rating: 4.3 },
+  { id: 24, title: "Succulent Plant Set", price: 699, category: "Home", image: "https://images.unsplash.com/photo-1459411552884-841db9b3cc2a?w=800&q=80", rating: 4.7 },
+  { id: 25, title: "Formal Oxford Shoes", price: 4999, category: "Fashion", image: "https://images.unsplash.com/photo-1614252339460-e1caadeca5db?w=800&q=80", rating: 4.6 },
+  { id: 26, title: "Wireless Charging Pad", price: 1499, category: "Electronics", image: "https://images.unsplash.com/photo-1586816879360-004f5b0c51e3?w=800&q=80", rating: 4.4 },
+  { id: 27, title: "Canvas Tote Bag", price: 899, category: "Accessories", image: "https://images.unsplash.com/photo-1597528399589-babaecdb47e7?w=800&q=80", rating: 4.5 },
+  { id: 28, title: "Smart LED Bulb", price: 1299, category: "Gadgets", image: "https://images.unsplash.com/photo-1550989460-0adf9ea622e2?w=800&q=80", rating: 4.6 },
+  { id: 29, title: "Satin Pillowcase Set", price: 1599, category: "Home", image: "https://images.unsplash.com/photo-1584100936595-c0654b55a2e6?w=800&q=80", rating: 4.8 },
+  { id: 30, title: "Summer Dress", price: 2999, category: "Fashion", image: "https://images.unsplash.com/photo-1515347619362-72fe882fd426?w=800&q=80", rating: 4.5 },
+  { id: 31, title: "Tablet Pro 11-inch", price: 65999, category: "Electronics", image: "https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?w=800&q=80", rating: 4.9 },
+  { id: 32, title: "Sports Beanie", price: 699, category: "Accessories", image: "https://images.unsplash.com/photo-1576871337632-b9aef4c17ab9?w=800&q=80", rating: 4.4 },
+  { id: 33, title: "VR Headset", price: 29999, category: "Gadgets", image: "https://images.unsplash.com/photo-1622979135225-d2ba269cf1ac?w=800&q=80", rating: 4.7 },
+  { id: 34, title: "Wooden Desk Organizer", price: 1199, category: "Home", image: "https://images.unsplash.com/photo-1593640408182-31c70c8268f5?w=800&q=80", rating: 4.5 },
+  { id: 35, title: "Casual Chinos", price: 2199, category: "Fashion", image: "https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?w=800&q=80", rating: 4.4 },
+  { id: 36, title: "Retro Film Camera", price: 12499, category: "Electronics", image: "https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?w=800&q=80", rating: 4.8 },
+  { id: 37, title: "Leather Belt", price: 1299, category: "Accessories", image: "https://images.unsplash.com/photo-1624222247344-550fb60583dc?w=800&q=80", rating: 4.5 },
+  { id: 38, title: "Electric Toothbrush", price: 3999, category: "Gadgets", image: "https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=800&q=80", rating: 4.6 },
+  { id: 39, title: "Wall Art Print", price: 1499, category: "Home", image: "https://images.unsplash.com/photo-1513519245088-0e12902e5a38?w=800&q=80", rating: 4.7 },
+  { id: 40, title: "Yoga Leggings", price: 1899, category: "Fashion", image: "https://images.unsplash.com/photo-1506629082955-511b1aa562c8?w=800&q=80", rating: 4.6 },
+  { id: 41, title: "Studio Microphone", price: 8999, category: "Electronics", image: "https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?w=800&q=80", rating: 4.8 },
+  { id: 42, title: "Gold Plated Ring", price: 999, category: "Accessories", image: "https://images.unsplash.com/photo-1605100804763-247f52bcfdcb?w=800&q=80", rating: 4.5 },
+  { id: 43, title: "Pocket Drone", price: 15499, category: "Gadgets", image: "https://images.unsplash.com/photo-1524143986875-3b098d78b363?w=800&q=80", rating: 4.4 },
+  { id: 44, title: "French Press Maker", price: 2499, category: "Home", image: "https://images.unsplash.com/photo-1520699049698-acd2fce1b559?w=800&q=80", rating: 4.7 },
+  { id: 45, title: "Winter Coat", price: 8999, category: "Fashion", image: "https://images.unsplash.com/photo-1539533018447-63fcce2678e3?w=800&q=80", rating: 4.9 },
+  { id: 46, title: "External Hard Drive 2TB", price: 5499, category: "Electronics", image: "https://images.unsplash.com/photo-1531492746076-161ca9bcad58?w=800&q=80", rating: 4.7 },
+  { id: 47, title: "Crossbody Bag", price: 1699, category: "Accessories", image: "https://images.unsplash.com/photo-1591561954557-26941169b49e?w=800&q=80", rating: 4.6 },
+  { id: 48, title: "Smart Thermostat", price: 12999, category: "Gadgets", image: "https://images.unsplash.com/photo-1558089687-f282ffcbc126?w=800&q=80", rating: 4.8 }
+];
 
-export default products
+export default products;

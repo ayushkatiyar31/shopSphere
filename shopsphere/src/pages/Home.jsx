@@ -21,9 +21,10 @@ function Home() {
 
   useEffect(() => {
     setIsLoading(true)
+    setCurrentPage(1) // Reset to first page when filtering changes
     const t = setTimeout(() => setIsLoading(false), 300)
     return () => clearTimeout(t)
-  }, [search, category, sortOrder, maxPrice, currentPage])
+  }, [search, category, sortOrder, maxPrice])
 
   const filteredProducts = products
     .filter((product) =>
