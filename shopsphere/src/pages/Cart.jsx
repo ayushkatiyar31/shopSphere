@@ -80,13 +80,13 @@ function Cart() {
               {cartItems.map((item) => (
                 <div
                   key={item.id}
-                  className="flex flex-col sm:flex-row gap-6 p-6 bg-white rounded-2xl shadow-sm border border-gray-100 group transition-all hover:shadow-md"
+                  className="flex flex-col sm:flex-row gap-6 p-6 bg-white rounded-3xl shadow-sm border border-gray-100/80 group transition-all duration-300 hover:shadow-[0_8px_30px_rgb(0,0,0,0.06)] hover:-translate-y-1"
                 >
-                  <div className="w-full sm:w-32 h-32 shrink-0 bg-gray-50 rounded-xl p-4 flex items-center justify-center relative overflow-hidden">
+                  <div className="w-full sm:w-32 h-32 shrink-0 bg-gray-50/50 rounded-2xl p-4 flex items-center justify-center relative overflow-hidden border border-gray-100/50 group-hover:bg-white transition-colors duration-500">
                     <img
                       src={item.image}
                       alt={item.title}
-                      className="w-full h-full object-contain mix-blend-multiply group-hover:scale-110 transition-transform duration-500"
+                      className="w-full h-full object-contain mix-blend-multiply group-hover:scale-110 group-hover:-rotate-3 transition-transform duration-500"
                     />
                   </div>
 
@@ -142,7 +142,7 @@ function Cart() {
 
             {/* Order Summary */}
             <div className="lg:col-span-4">
-              <div className="bg-white rounded-3xl p-8 shadow-sm border border-gray-100 lg:sticky lg:top-24">
+              <div className="bg-white rounded-3xl p-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-gray-100/80 lg:sticky lg:top-24">
                 <h3 className="text-xl font-bold text-gray-900 mb-6">Order Summary</h3>
                 
                 <div className="space-y-4 text-gray-600 pb-6 border-b border-gray-100">

@@ -94,13 +94,13 @@ function ProductDetail() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
           
           {/* Image Gallery Mock */}
-          <div className="flex flex-col gap-4 animate-fade-in">
-            <div className="w-full aspect-square bg-gray-50 rounded-2xl border border-gray-100 flex items-center justify-center p-8 lg:p-12 relative overflow-hidden group">
+          <div className="flex flex-col gap-5 animate-fade-in">
+            <div className="w-full aspect-square bg-white rounded-3xl border border-gray-100/80 shadow-[0_8px_30px_rgb(0,0,0,0.04)] flex items-center justify-center p-8 lg:p-12 relative overflow-hidden group">
               <button 
                 onClick={handleWishlist}
-                className="absolute top-4 right-4 z-10 p-3 bg-white/80 backdrop-blur-md rounded-full shadow hover:bg-white hover:scale-110 transition-all focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                className="absolute top-5 right-5 z-10 p-3 bg-white/80 backdrop-blur-md rounded-full shadow hover:bg-white hover:scale-110 hover:shadow-md transition-all focus:outline-none focus:ring-2 focus:ring-indigo-500"
               >
-                <Heart size={24} className={isWished ? "fill-red-500 text-red-500" : "text-gray-500"} />
+                <Heart size={24} className={isWished ? "fill-red-500 text-red-500" : "text-gray-400"} />
               </button>
               
               <img
@@ -110,10 +110,10 @@ function ProductDetail() {
               />
             </div>
             
-            <div className="grid grid-cols-4 gap-4">
+            <div className="grid grid-cols-4 gap-4 mt-2">
               {[1, 2, 3, 4].map(idx => (
-                <div key={idx} className={`aspect-square rounded-lg border ${idx === 1 ? 'border-indigo-600 ring-1 ring-indigo-600' : 'border-gray-200'} bg-gray-50 p-2 cursor-pointer hover:border-indigo-400 transition-colors`}>
-                  <img src={product.image} alt="Thumbnail" className="w-full h-full object-contain mix-blend-multiply opacity-80" />
+                <div key={idx} className={`aspect-square rounded-2xl border ${idx === 1 ? 'border-indigo-600 ring-4 ring-indigo-50 shadow-sm' : 'border-gray-100/80 shadow-sm hover:shadow-md'} bg-white p-3 cursor-pointer hover:border-indigo-300 hover:-translate-y-1 hover:scale-105 transition-all duration-300`}>
+                  <img src={product.image} alt="Thumbnail" className="w-full h-full object-contain mix-blend-multiply opacity-90 group-hover:scale-105 transition-transform" />
                 </div>
               ))}
             </div>
@@ -148,12 +148,12 @@ function ProductDetail() {
               Crafted from premium materials, it ensures unparalleled durability and performance for everyday use.
             </p>
 
-            <div className="flex gap-4 pb-8 mb-8 border-b border-gray-200">
-              <Button size="lg" className="flex-1 text-base gap-2" onClick={handleAddToCart}>
+            <div className="flex gap-4 pb-8 mb-8 border-b border-gray-100/80">
+              <Button size="lg" className="flex-1 text-base gap-2 shadow-xl shadow-indigo-200 hover:shadow-indigo-300/60 transition-shadow" onClick={handleAddToCart}>
                 <ShoppingBag size={20} /> Add to Cart
               </Button>
-              <Button size="lg" variant="outline" className="px-8 flex-none border-indigo-200 text-indigo-700 hover:bg-indigo-50" onClick={handleWishlist}>
-                <Heart size={20} className={isWished ? "fill-current" : ""} />
+              <Button size="lg" variant="outline" className="px-8 flex-none border-gray-200 text-gray-700 hover:border-indigo-600 hover:text-indigo-700 hover:bg-indigo-50 shadow-sm transition-all" onClick={handleWishlist}>
+                  <Heart size={20} className={isWished ? "fill-red-500 text-red-500" : ""} />
               </Button>
             </div>
 

@@ -15,9 +15,13 @@ function Home() {
 
   const productsPerPage = 8 // Increased for better grid density
 
+  const [isLoading, setIsLoading] = useState(false)
+
   useEffect(() => {
-    setCurrentPage(1)
-  }, [search, category, sortOrder, maxPrice])
+    setIsLoading(true)
+    const t = setTimeout(() => setIsLoading(false), 300)
+    return () => clearTimeout(t)
+  }, [search, category, sortOrder, maxPrice, currentPage])
 
   const filteredProducts = products
     .filter((product) =>
@@ -149,14 +153,27 @@ function Home() {
             </span>
           </div>
 
-          {currentProducts.length > 0 ? (
+          {isLoading ? (
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+               {Array.from({length: productsPerPage}).map((_, i) => (
+                  <div key={i} className="flex flex-col bg-white rounded-2xl border border-gray-100 shadow-sm p-4 h-80 overflow-hidden">
+                      <div className="w-full h-48 bg-gray-100 rounded-xl animate-pulse mb-4"></div>
+                      <div className="w-2/3 h-4 bg-gray-100 rounded animate-pulse mb-2"></div>
+                      <div className="w-1/3 h-4 bg-gray-100 rounded animate-pulse mb-4"></div>
+                      <div className="w-1/4 h-6 bg-gray-100 rounded animate-pulse mt-auto relative overflow-hidden">
+                         <div className="absolute inset-0 -translate-x-full animate-[shimmer_1.5s_infinite] bg-gradient-to-r from-transparent via-white/40 to-transparent"></div>
+                      </div>
+                  </div>
+               ))}
+            </div>
+          ) : currentProducts.length > 0 ? (
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 animate-fade-in">
               {currentProducts.map((product) => (
                 <ProductCard key={product.id} product={product} />
               ))}
             </div>
           ) : (
-            <div className="flex flex-col items-center justify-center py-24 px-4 text-center bg-white rounded-2xl border border-gray-200 border-dashed">
+            <div className="flex flex-col items-center justify-center py-24 px-4 text-center bg-white rounded-2xl border border-gray-200 border-dashed animate-fade-in-up">
               <div className="bg-gray-100 p-4 rounded-full mb-4">
                 <Search className="h-8 w-8 text-gray-400" />
               </div>

@@ -38,8 +38,13 @@ function ProductCard({ product }) {
   // Generate a mock rating between 4.0 and 5.0 based on product ID
   const mockRating = (4 + (product.id % 10) * 0.1).toFixed(1)
 
+  // Subtly inject badges on fixed modulo intervals
+  const isTrending = product.id % 4 === 0;
+  const isBestSeller = product.id % 5 === 0 && !isTrending;
+  const isNew = product.id % 7 === 0 && !isTrending && !isBestSeller;
+
   return (
-    <div className="group relative flex flex-col bg-white rounded-2xl border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 overflow-hidden">
+    <div className="group relative flex flex-col bg-white rounded-2xl border border-gray-200/60 shadow-sm hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-all duration-300 transform hover:-translate-y-1 overflow-hidden">
       
       {/* Wishlist Toggle */}
       <button 
@@ -49,12 +54,17 @@ function ProductCard({ product }) {
         <Heart size={18} className={isWished ? "fill-red-500 text-red-500" : "text-gray-500"} />
       </button>
 
+      {/* Badges */}
+      {isTrending && <span className="absolute top-3 left-3 z-10 bg-orange-100 text-orange-700 text-[10px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wider backdrop-blur-md">Trending</span>}
+      {isBestSeller && <span className="absolute top-3 left-3 z-10 bg-indigo-100 text-indigo-700 text-[10px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wider backdrop-blur-md">Best Seller</span>}
+      {isNew && <span className="absolute top-3 left-3 z-10 bg-emerald-100 text-emerald-700 text-[10px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wider backdrop-blur-md">New</span>}
+
       <Link to={`/product/${product.id}`} className="flex-1 flex flex-col relative overflow-hidden">
-        <div className="relative aspect-square overflow-hidden bg-white flex items-center justify-center p-6 border-b border-gray-50">
+        <div className="relative aspect-square overflow-hidden bg-white flex items-center justify-center p-6 border-b border-gray-50 group-hover:bg-gray-50/20 transition-colors duration-300">
           <img
             src={product.image}
             alt={product.title}
-            className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500 drop-shadow-md"
+            className="w-full h-full object-contain group-hover:scale-[1.03] transition-transform duration-500 drop-shadow-md"
             loading="lazy"
           />
           
