@@ -5,6 +5,8 @@ import Cart from "./pages/Cart"
 import ProductDetail from "./pages/ProductDetail"
 import About from "./pages/About"
 import Contact from "./pages/Contact"
+import Wishlist from "./pages/Wishlist"
+import Profile from "./pages/Profile"
 
 function App() {
   return (
@@ -12,6 +14,8 @@ function App() {
       <Route path="/" element={<Layout />}>
         <Route index element={<Home />} />
         <Route path="cart" element={<Cart />} />
+        <Route path="wishlist" element={<Wishlist />} />
+        <Route path="profile" element={<Profile />} />
         <Route path="product/:id" element={<ProductDetail />} />
         <Route path="about" element={<About />} />
         <Route path="contact" element={<Contact />} />
