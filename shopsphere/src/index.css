@@ -6,12 +6,19 @@
 
 @layer base {
   body {
-    @apply font-sans antialiased text-gray-900 bg-gray-50;
-    font-family: 'Inter', sans-serif;
+    @apply antialiased text-gray-900 bg-gray-50 transition-colors duration-300;
   }
   
+  html.dark body {
+    @apply text-white bg-dark-background;
+  } 
+
   ::selection {
     @apply bg-indigo-500/30 text-indigo-900;
+  }
+  
+  html.dark ::selection {
+    @apply bg-indigo-500/50 text-white;
   }
 }
 

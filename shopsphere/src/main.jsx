@@ -1,20 +1,25 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import { BrowserRouter } from 'react-router-dom'
-import App from './App'
-import { CartProvider } from './context/CartContext'
-import { ToastProvider } from './context/ToastContext'
-import { WishlistProvider } from './context/WishlistContext'
-import './index.css'
+import React from "react"
+import ReactDOM from "react-dom/client"
+import App from "./App.jsx"
+import "./index.css"
+import { BrowserRouter } from "react-router-dom"
+import { CartProvider } from "./context/CartContext"
+import { WishlistProvider } from "./context/WishlistContext"
+import { ToastProvider } from "./context/ToastContext"
+import { ThemeProvider } from "./context/ThemeContext"
 
-ReactDOM.createRoot(document.getElementById('root')).render(
-  <BrowserRouter>
-    <ToastProvider>
-      <WishlistProvider>
+ReactDOM.createRoot(document.getElementById("root")).render(
+  <React.StrictMode>
+    <BrowserRouter>
+      <ThemeProvider>
         <CartProvider>
-          <App />
+          <WishlistProvider>
+            <ToastProvider>
+              <App />
+            </ToastProvider>
+          </WishlistProvider>
         </CartProvider>
-      </WishlistProvider>
-    </ToastProvider>
-  </BrowserRouter>
+      </ThemeProvider>
+    </BrowserRouter>
+  </React.StrictMode>
 )
