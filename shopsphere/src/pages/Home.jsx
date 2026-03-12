@@ -18,13 +18,13 @@ function Home() {
   const productsPerPage = 8 // Increased for better grid density
 
   const [isLoading, setIsLoading] = useState(false)
+  
 
   useEffect(() => {
     setIsLoading(true)
-    setCurrentPage(1) // Reset to first page when filtering changes
     const t = setTimeout(() => setIsLoading(false), 300)
     return () => clearTimeout(t)
-  }, [search, category, sortOrder, maxPrice])
+  }, [search, category, sortOrder, maxPrice, currentPage])
 
   const filteredProducts = products
     .filter((product) =>
@@ -44,7 +44,7 @@ function Home() {
   const indexOfFirstProduct = indexOfLastProduct - productsPerPage
   const currentProducts = filteredProducts.slice(
     indexOfFirstProduct,
-    indexOfLastProduct
+    indexOfLastProduct,
   )
 
   const totalPages = Math.ceil(filteredProducts.length / productsPerPage)
